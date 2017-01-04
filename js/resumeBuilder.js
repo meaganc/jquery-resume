@@ -73,10 +73,11 @@ education.display = function(){
     var formatedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
     var formatedHTMLschoolDates = HTMLschoolDates.replace("%data%", school.dates);
     var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+    var formattedHTMLschoolUrl = HTMLonlineURL.replace("%data%", school.url);
 
     $('#education').append(HTMLschoolStart);
-    $('.education-entry:last').append(formatedHTMLschoolName, formatedHTMLschoolDates, formattedHTMLschoolLocation);
-    $('.education-entry:last a').append(formatedHTMLschoolDegree); //make sure the a tag is closed properly
+    $('.education-entry:last').append(formatedHTMLschoolName, formatedHTMLschoolDates, formattedHTMLschoolLocation, formattedHTMLschoolUrl);
+    $('.education-entry:last a:first').append(formatedHTMLschoolDegree); //make sure the a tag is closed properly
 
     if (school.majors.length >= 1) {
       var formattedHTMLschoolMajor;
